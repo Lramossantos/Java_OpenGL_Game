@@ -1,5 +1,7 @@
 package org.graphics;
 
+import org.input.MouseInput;
+
 import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
@@ -22,7 +24,9 @@ public class Renderer {
 		window.setSize(screenWidth, screenHeight);
 		window.setResizable(false);
 		window.addGLEventListener(new EventListener());
-
+		window.addMouseListener(new MouseInput());
+		window.requestFocus(true);
+		
 		FPSAnimator animator = new FPSAnimator(window, 60);
 		animator.start();
 		
