@@ -6,13 +6,15 @@ import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 
 public class EventListener implements GLEventListener {
-
+	
+	public static GL2 gl = null;
+	
 	@Override
 	public void display(GLAutoDrawable drawable) {
-		GL2 gl = drawable.getGL().getGL2();
+		gl = drawable.getGL().getGL2();
 
 		gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-
+		
 		gl.glColor3f(0, 0, 1);
 		gl.glBegin(GL2.GL_QUADS);
 		gl.glVertex2f(-1, -1);
